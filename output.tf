@@ -5,19 +5,23 @@ locals {
 }
 
 output "project_id" {
-  value = local.project_id
+  value       = local.project_id
+  description = "The project the created resources exist in."
 }
 
 output "table_locations" {
-  value = local.table_locations
+  value       = local.table_locations
+  description = "The data location for every table made accessible."
 }
 
 output "wif_audience" {
-  value = local.wif_audience
+  value       = local.wif_audience
+  description = "The audience value required for impersonation interactions."
 }
 
 output "wif_impersonation_url" {
-  value = local.wif_impersonation_url
+  value       = local.wif_impersonation_url
+  description = "The URL used for impersonation interactions."
 }
 
 output "access_blob" {
@@ -28,4 +32,5 @@ output "access_blob" {
     wifImpersonationURL = local.wif_impersonation_url,
     roundtripDigest     = var.roundtrip_digest,
   }))
+  description = "All other outputs crammed into a single copy/pasteable value."
 }
